@@ -1,0 +1,13 @@
+REQUEST POST "https://chan.sankakucomplex.com/user/authenticate" 
+  CONTENT "url=&user%5Bname%5D=<USER>&user%5Bpassword%5D=<PASS>&commit=Login" 
+  CONTENTTYPE "application/x-www-form-urlencoded" 
+  HEADER "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+
+KEYCHECK 
+  KEYCHAIN Success OR 
+    KEY "You are now logged in" 
+  KEYCHAIN Failure OR 
+    KEY "Access denied" 
+
